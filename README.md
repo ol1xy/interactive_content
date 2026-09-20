@@ -1,1 +1,1 @@
-** Abstract readme for blank project, irdk
+** Abstract readme for blank project
