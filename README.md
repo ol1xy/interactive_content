@@ -1,0 +1,1 @@
+** Abstract readme for blank project, irdk
