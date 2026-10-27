@@ -2,3 +2,9 @@
 .png
 .jpg
 .wtf
+
+# Composer dependencies
+/vendor/
+
+# PHPUnit & cache
+.phpunit.result.cache
