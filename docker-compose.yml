@@ -1,12 +1,14 @@
 services:
   composer:
     image: composer:2
+    network_mode: host
     volumes:
       - ./:/app
     working_dir: /app
 
   php:
     image: php:8.3-cli
+    network_mode: host
     volumes:
       - ./:/app
     working_dir: /app
