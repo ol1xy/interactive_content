@@ -1,14 +1,35 @@
 services:
   composer:
     image: composer:2
-    network_mode: host
+    network_mode: bridge
+    extra_hosts:
+      - "repo.packagist.org:79.127.134.230"
+      - "packagist.org:185.93.2.251"
+      - "api.github.com:140.82.121.6"
+      - "github.com:140.82.121.3"
+      - "codeload.github.com:140.82.121.10"
+    environment:
+      - COMPOSER_PROCESS_TIMEOUT=2000
+      - GIT_CONFIG_COUNT=1
+      - GIT_CONFIG_KEY_0=safe.directory
+      - GIT_CONFIG_VALUE_0=*
     volumes:
       - ./:/app
     working_dir: /app
 
   php:
     image: php:8.3-cli
-    network_mode: host
+    network_mode: bridge
+    extra_hosts:
+      - "repo.packagist.org:79.127.134.230"
+      - "packagist.org:185.93.2.251"
+      - "api.github.com:140.82.121.6"
+      - "github.com:140.82.121.3"
+      - "codeload.github.com:140.82.121.10"
+    environment:
+      - GIT_CONFIG_COUNT=1
+      - GIT_CONFIG_KEY_0=safe.directory
+      - GIT_CONFIG_VALUE_0=*
     volumes:
       - ./:/app
     working_dir: /app
