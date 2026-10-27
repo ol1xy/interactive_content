@@ -8,3 +8,7 @@
 
 # PHPUnit & cache
 .phpunit.result.cache
+
+# Generated demo output
+sample.pdf
+sample.xlsx
